@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMVxYB3ukv6j92t77n6G6H1p1tK6u/2tD0aX9" crossorigin="anonymous">
+
+    <title>Barbearia Social club Mietlicki</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Faz o corpo ocupar a altura total da tela */
+            font-family: 'Roboto', sans-serif;
+            background-color: #111;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #333, #1a1a1a);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+       
+       
+       
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 50px;
+            display: flex;
+            justify-content: left; /* Centraliza o conteúdo */
+           
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns:  repeat(2, 1fr); /* 2 colunas */
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background-color: #222;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-top: 30px; /* Move a imagem para baixo */
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin: 20px;
+        }
+
+        .service-card p {
+            margin: 0 20px 20px;
+            font-size: 1rem;
+            color: #bbb;
+        }
+
+        .contact {
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .contact h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+        }
+
+        
+
+        footer {
+            background-color: #1a1a1a;
+            padding: 15px;
+            text-align: center;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+    
+
+        .imagem-fixa1 {
+            position: fixed;
+            bottom: 10px;
+            left: 20px;
+            width: 95px;
+            height: auto;
+            z-index: 1000;
+            top: 15px; 
+
+          
+        }
+
+        .dwhats {
+            position: fixed;
+            bottom: 30px;
+            z-index: 9999999999;
+            display: flex;
+            align-items: center;
+            right: 15px;
+            width: 50px;
+            height: 48px;
+            display: block;
+            border-radius: 50%;
+            background: #25d366;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+        }
+        
+        .dwhats:hover {
+            background: #58d887;
+        }
+        
+
+        .dwhats:active {
+        background: #25d33c;
+}
+
+        .dwhats::before {
+            content: "";
+            display: block;
+            background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3e%3cpath fill='%23fff' d='M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z'%3e%3c/path%3e%3c/svg%3e") top center no-repeat;
+            height: 35px;
+            margin-top: 6px;
+        }
+
+      
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Barbearia Social club Mietlicki</h1>
+        <p>Onde estilo e sofisticação se encontram</p>
+        <nav>
+           
+            <a href="#servicos">Serviços</a>
+           
+        </nav>
+    </header>
+
+    <section id="servicos">
+        <div class="container">
+            <section class="services">
+                <div class="service-card">
+                    <img src="294711118_5235718693131646_2914508323251379139_n.jpg">
+                    <h3>Corte</h3>
+                    <p>Estilo moderno e clássico, com técnicas de alto nível.</p>
+                </div>
+
+                <div class="service-card">
+                    <img src="Screenshot_1.png" alt="Barba Perfeita">
+                    <h3>Barba</h3>
+                    <p>Alinhamento, hidratação e modelagem para todos os tipos de barba.</p>
+                </div>
+
+                <div class="service-card">
+                    <img src="Screenshot_2.png" alt="Massagem Relaxante">
+                    <h3>Massagem Relaxante</h3>
+                    <p>Experiência relaxante com óleos essenciais.</p>
+                </div>
+
+                <div class="service-card">
+                    <img src="Screenshot_3.png" alt="Tratamento Capilar">
+                    <h3>Corte Infantil</h3>
+                    <p>Estilo moderno e clássico, com técnicas de alto nível</p>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <img src="303597845_516380343822582_67633279712105644_n-removebg-preview.png" alt="logo Barbearia Social Club Mietlicki." class="imagem-fixa1">
+
+    
+        
+            <div>
+                <a href="https://wa.link/0fh0jm"   target="_blank" class="dwhats"></a>
+            </div>
+           
+            
+
+        </section>
+    </section>
+
+    <footer>
+        &copy; 2024 Barbearia - Todos os direitos reservados.
+    </footer>
+</body>
+</html>
